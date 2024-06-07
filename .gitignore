@@ -1,0 +1,33 @@
+# sbt
+bin/
+project/project/
+project/target/
+target/
+build/
+resources/outputFiles/
+
+# eclipse
+build
+.classpath
+.project
+.settings
+.worksheet
+
+# intellij idea
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+
+# mac
+.DS_Store
+
+.history
+.scala_dependencies
+.cache
+.cache-main
+
+#general
+*.class
+**/Makefile.*
