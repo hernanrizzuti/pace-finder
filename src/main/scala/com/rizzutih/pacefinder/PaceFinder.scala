@@ -10,14 +10,14 @@ object PaceFinder extends App {
 
   val metricDefinitionsDataset = sparkService.loadCsvData("src/main/resources/metric_definitions.csv")
   val metricDefinitions = new MetricDefinitionLoader().getAllDefinitions(metricDefinitionsDataset)
-  val activities = sparkService.loadParquetData(s"$baseDir/activities.parquet")
+  val activities = sparkService.loadParquetData(s"$baseDir/activities-5-years.parquet")
 
   activities.createOrReplaceTempView("activity")
 
   metricDefinitions.foreach(m => {
     val result = sparkService.executeSql(m.sqlScript)
     sparkService.writeData(result, s"$baseDir/${m.destinationDir}/")
-    result.show(false)
+//    result.show(1000, false)
   })
 
   sparkService.stopSession()
