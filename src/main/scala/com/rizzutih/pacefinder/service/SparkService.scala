@@ -21,7 +21,7 @@ class SparkService(val sparkSessionConfig: SparkSessionConfig) {
 
   def writeData(dataFrame: DataFrame,
                 path: String): Unit = {
-    dataFrame.write.mode(SaveMode.Overwrite).parquet(path)
+    dataFrame.write.mode(SaveMode.Overwrite).json(path)
   }
 
   def executeSql(sql: String): DataFrame = {

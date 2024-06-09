@@ -57,7 +57,7 @@ class SparkServiceTest extends UnitSpec {
     //when
     sparkService.writeData(dataFrame, path)
     //then
-    dataFrameWriter.parquet(path) wasCalled once
+    dataFrameWriter.json(path) wasCalled once
   }
 
   "executeSql" should "call spark sql" in {

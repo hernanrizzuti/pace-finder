@@ -4,7 +4,7 @@ import com.rizzutih.pacefinder.service.{MetricDefinitionLoader, SparkService}
 import com.rizzutih.pacefinder.sparkConfig.LocalSparkSessionConfig
 
 object PaceFinder extends App {
-
+//TODO: create more metrics, extract logic from here and create a service, create an argumentProcessor, update readme.
   val sparkService = new SparkService(new LocalSparkSessionConfig())
   val baseDir = ""
 
